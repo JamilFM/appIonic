@@ -1,8 +1,7 @@
 <ion-header>
     <ion-navbar>
       
-      <ion-title>
-        Seja Bem Vindo!</ion-title>
+      <ion-title>Seja Bem Vindo!</ion-title>
       
       <ion-buttons end>
         <button ion-button icon-only (click)="adicionar()">
@@ -18,8 +17,7 @@
   
   <ion-content padding>
     <ion-list>
-      <ion-item *ngFor="let tarefa of tarefas | async"> 
-        {{ tarefa.nome }}
+      <ion-item *ngFor="let tarefa of tarefas | async">  {{ tarefa.nome }}
   
         <button clear="" ion-button item-end icon-left (click)="finalizar(tarefa)">
           <ion-icon name="checkbox"></ion-icon>

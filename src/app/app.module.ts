@@ -17,11 +17,12 @@ import { AuthProvider } from '../providers/auth/auth';
 
 import { LoginPage } from '../pages/login/login';
 
-import { config } from '../config';
 import { TarefasProvider } from '../providers/tarefas/tarefas';
 
 import { AdicionarTarefaPage } from '../pages/adicionar-tarefa/adicionar-tarefa';
 import { TarefasFinalizadasPage } from '../pages/tarefas-finalizadas/tarefas-finalizadas';
+
+import { config } from '../config';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,7 @@ import { TarefasFinalizadasPage } from '../pages/tarefas-finalizadas/tarefas-fin
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},    
     AuthProvider,
-    TarefasProvider
+    TarefasProvider,
   ]
 })
 export class AppModule {}

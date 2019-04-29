@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 
 
@@ -11,7 +10,6 @@ import { User } from '../../models/user';
 
 @Injectable()
 export class AuthProvider {
-
   
   user: Observable<firebase.User>;
 

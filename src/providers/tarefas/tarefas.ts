@@ -33,9 +33,7 @@ export class TarefasProvider {
     });
   }
 
-  // Este método será retorna um lista de tarefas pode ser
-  // as finalizadas ou as que ainda não foram finalizadas
-  // para filtrar passamos o parametro finalizada
+  
   pegarTarefas(finalizada: boolean) {
     return this.afs
       .collection<Tarefas>(this.caminho, ref => {
@@ -51,17 +49,14 @@ export class TarefasProvider {
       });
   }
 
-  // Método usado para adicionar uma tarefa
   adicionar(tarefa: Tarefas) {
     this.tarefasColllection.add(tarefa);
   }
 
-  // Método usado para atualizar uma tarefa
   atualizar (id: string, task:Tarefas) {
     this.tarefasColllection.doc(id).update(task);
   }
 
-  // Método usado para excluir uma tarefa
   excluir (id: string) {
     this.tarefasColllection.doc(id).delete();
   }

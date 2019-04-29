@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar color="primary">
-    <ion-title></ion-title>
+    <ion-title> LOGIN </ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -8,8 +8,8 @@
 
 <ion-card>
 
-  <ion-card-header class="login">
-    <ion-icon style="zoom: 5;" name="lock"></ion-icon>
+  <ion-card-header >
+    <ion-icon style="zoom:6;" name="lock"></ion-icon>
   </ion-card-header>
 
   <ion-card-content>
@@ -25,6 +25,12 @@
     </ion-item>
 
     <button ion-button block (click)="login(user)">Login</button>
+    <br>
+       <ion-item>
+        Ainda não tem cadastro?
+      </ion-item>  
+      
+    
     <button ion-button block color="secondary" (click)="register(user)">Cadastro</button>
   
   </ion-card-content>
