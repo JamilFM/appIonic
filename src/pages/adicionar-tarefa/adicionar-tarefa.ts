@@ -12,16 +12,13 @@ import { TabsPage } from '../tabs/tabs';
 })
 export class AdicionarTarefaPage {
 
-  // Definição do atributo tarefa que será usado para o cadastro
   public tarefa = {} as Tarefas;
 
-  // Adicionando o serviço de tarefa no construtor
   constructor(public navCtrl: NavController, 
               public navParams: NavParams,
               private tarefasProvider:TarefasProvider) {
   }
 
-  // Método que será usado para adicionar uma tarefa
   adicionarTarefa(tarefa: Tarefas) {
       tarefa.finalizada = false;
       this.tarefasProvider.adicionar(tarefa);

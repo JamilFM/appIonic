@@ -10,13 +10,10 @@ import { Tarefas } from '../../models/tarefas'
 @Injectable()
 export class TarefasProvider {
   
-  private caminho: string = '';
-  
-  private tarefasColllection: AngularFirestoreCollection<Tarefas>;
-  
+  private caminho: string = '';  
+  private tarefasColllection: AngularFirestoreCollection<Tarefas>;  
   tasks: Observable<Tarefas[]>;
-  
-  constructor(private afs: AngularFirestore, private auth: AuthProvider) {    
+    constructor(private afs: AngularFirestore, private auth: AuthProvider) {    
     
     this.auth.user.subscribe(auth => {      
       

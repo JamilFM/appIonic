@@ -12,7 +12,6 @@ import { User } from '../../models/user';
 export class AuthProvider {
   
   user: Observable<firebase.User>;
-
   constructor(private firebaseAuth: AngularFireAuth) {
     this.user = firebaseAuth.authState;
   }

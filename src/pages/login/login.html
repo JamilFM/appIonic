@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar color="primary">
-    <ion-title> LOGIN </ion-title>
+    <ion-title> Login ou Cadastro </ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -25,16 +25,13 @@
     </ion-item>
 
     <button ion-button block (click)="login(user)">Login</button>
-    <br>
-       <ion-item>
-        Ainda não tem cadastro?
-      </ion-item>  
-      
-    
-    <button ion-button block color="secondary" (click)="register(user)">Cadastro</button>
-  
   </ion-card-content>
-
 </ion-card>
+  <ion-card-header>
+    
+  <button ion-button block color ="secundary" outline (click)="register(user)"> Ainda não tem cadastro?</button>
+  </ion-card-header>
+
+
 
 </ion-content>
