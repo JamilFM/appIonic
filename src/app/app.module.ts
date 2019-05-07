@@ -18,7 +18,7 @@ import { AuthProvider } from '../providers/auth/auth';
 import { LoginPage } from '../pages/login/login';
 
 import { TarefasProvider } from '../providers/tarefas/tarefas';
-
+import { ListagemCategoriasPage } from "../pages/listagem-categorias/listagem-categorias";
 import { AdicionarTarefaPage } from '../pages/adicionar-tarefa/adicionar-tarefa';
 import { TarefasFinalizadasPage } from '../pages/tarefas-finalizadas/tarefas-finalizadas';
 
@@ -32,6 +32,7 @@ import { config } from '../config';
     LoginPage,
     AdicionarTarefaPage,
     TarefasFinalizadasPage,
+    ListagemCategoriasPage,
   ],
   imports: [
     BrowserModule,
@@ -49,6 +50,7 @@ import { config } from '../config';
     LoginPage,
     AdicionarTarefaPage,
     TarefasFinalizadasPage,
+    ListagemCategoriasPage,
 
   ],
   providers: [

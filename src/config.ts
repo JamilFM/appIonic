@@ -1,6 +1,4 @@
-
-
-export const config = {
+export const config = { 
   apiKey: "AIzaSyApe1FX6k_BADXneNiYuO-UtnxRNMW56dg",
   authDomain: "app-ionic-136a3.firebaseapp.com",
   databaseURL: "https://app-ionic-136a3.firebaseio.com",
