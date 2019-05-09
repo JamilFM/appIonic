@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar color="primary">
-    <ion-title> Login ou Cadastro </ion-title>
+    <ion-title> Acesse com seus dados </ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -24,12 +24,12 @@
       <ion-input type="password" [(ngModel)]="user.password"></ion-input>
     </ion-item>
 
-    <button ion-button block (click)="login(user)">Login</button>
+  <button ion-button block color="primary" (click)="login(user)">Acessar</button>
   </ion-card-content>
 </ion-card>
   <ion-card-header>
     
-  <button ion-button block color ="secundary" outline (click)="register(user)"> Ainda não tem cadastro?</button>
+  <button ion-button block color ="secundary" outline (click)="register(user)"> Cadastre-se </button>
   </ion-card-header>
 
 

@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Observable } from 'rxjs/Observable';
 import { TarefasProvider } from '../../providers/tarefas/tarefas';
 import { Tarefas } from '../../models/tarefas'
+import { LoginPage } from '../login/login';
 
 @IonicPage()
 @Component({
@@ -12,6 +13,7 @@ import { Tarefas } from '../../models/tarefas'
 export class TarefasFinalizadasPage {
 
   tarefas: Observable<Tarefas[]>;
+  auth: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, 
               private tarefasProvider:TarefasProvider) {
@@ -20,6 +22,12 @@ export class TarefasFinalizadasPage {
   excluir(id: string) {
     this.tarefasProvider.excluir(id);
   }
+
+  sair() {
+     
+      this.navCtrl.setRoot(LoginPage);
+     };
+  
 
   ionViewDidLoad() {
     this.tarefas = this.tarefasProvider.pegarTarefas(true);

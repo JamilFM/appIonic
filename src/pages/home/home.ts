@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Observable } from 'rxjs/Observable';
 import { AuthProvider } from '../../providers/auth/auth';
-import { LoginPage } from '../login/login';
 import { AdicionarTarefaPage } from '../adicionar-tarefa/adicionar-tarefa';
 import { TarefasProvider } from '../../providers/tarefas/tarefas';
 import { Tarefas } from '../../models/tarefas';
@@ -30,11 +29,7 @@ export class HomePage {
     this.tarefasProvider.excluir(id);
   }
 
-  sair() {
-    this.auth.logout().then(value => {
-      this.navCtrl.setRoot(LoginPage);
-     });
-  }
+  
 
   ionViewDidLoad() {
     this.tarefas = this.tarefasProvider.pegarTarefas(false);
