@@ -1,16 +1,18 @@
 
 <ion-header>
   <ion-navbar>
-    <ion-title>listagem-categorias</ion-title>
+    <ion-title>Categorias</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
+    <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar> 
 
     <ion-list no-lines>
-        <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">
-          {{ item }}
-        </button> 
+
+        <button ion-item *ngFor="let arr of arrayItems" (click)="itemSelected(arrayItems)">   
+          {{ arr.Categorias }}         
+        </button>   
       </ion-list>
 
 </ion-content>

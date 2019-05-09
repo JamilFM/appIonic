@@ -4,6 +4,7 @@ import { NavController } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { LoginPage } from '../login/login';
 import { TarefasFinalizadasPage } from '../tarefas-finalizadas/tarefas-finalizadas';
+import { ListagemCategoriasPage } from './../listagem-categorias/listagem-categorias';
 
 import { AuthProvider } from '../../providers/auth/auth'
 
@@ -15,6 +16,7 @@ export class TabsPage {
 
   tab1Root = HomePage;
   tab2Root = TarefasFinalizadasPage;
+  tab3Root = ListagemCategoriasPage;
 
   constructor(public navCtrl: NavController, private auth: AuthProvider) {
               this.auth.user.subscribe((auth) => {

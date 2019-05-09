@@ -6,7 +6,7 @@ import { MyApp } from './app.component';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
-
+import { AngularFireDatabase } from 'angularfire2/database';
 
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
@@ -23,6 +23,7 @@ import { AdicionarTarefaPage } from '../pages/adicionar-tarefa/adicionar-tarefa'
 import { TarefasFinalizadasPage } from '../pages/tarefas-finalizadas/tarefas-finalizadas';
 
 import { config } from '../config';
+import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { config } from '../config';
     {provide: ErrorHandler, useClass: IonicErrorHandler},    
     AuthProvider,
     TarefasProvider,
+    AngularFireDatabase
   ]
 })
 export class AppModule {}
