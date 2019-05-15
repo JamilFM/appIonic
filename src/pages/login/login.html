@@ -1,36 +1,36 @@
 <ion-header>
   <ion-navbar color="primary">
-    <ion-title> Acesse com seus dados </ion-title>
+    <ion-title> LOGIN </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
 
-<ion-card>
+  <ion-card>
 
-  <ion-card-header >
-    <ion-icon style="zoom:6;" name="lock"></ion-icon>
-  </ion-card-header>
+    <ion-card-header>
+      <ion-icon style="zoom:8;" name="lock"></ion-icon>
+    </ion-card-header>
 
+    <ion-card-content>
+
+      <ion-item>
+        <ion-label stacked>E-mail</ion-label>
+        <ion-input type="text" [(ngModel)]="user.email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>Senha</ion-label>
+        <ion-input type="password" [(ngModel)]="user.password"></ion-input>
+      </ion-item>
+
+      <button ion-button block color="primary" (click)="login(user)">Acessar</button>
+    </ion-card-content>
+  </ion-card>
   <ion-card-content>
-    
-    <ion-item>
-      <ion-label floating>E-mail</ion-label>
-      <ion-input type="text" [(ngModel)]="user.email"></ion-input>
-    </ion-item>
 
-    <ion-item>
-      <ion-label floating>Senha</ion-label>
-      <ion-input type="password" [(ngModel)]="user.password"></ion-input>
-    </ion-item>
-
-  <button ion-button block color="primary" (click)="login(user)">Acessar</button>
+    <button ion-button block color="secundary" outline (click)="register(user)"> Cadastre-se </button>
   </ion-card-content>
-</ion-card>
-  <ion-card-header>
-    
-  <button ion-button block color ="secundary" outline (click)="register(user)"> Cadastre-se </button>
-  </ion-card-header>
 
 
 

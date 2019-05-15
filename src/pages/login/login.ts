@@ -15,25 +15,23 @@ export class LoginPage {
   public user = {} as User;
 
   constructor(public navCtrl: NavController,
-     public navParams: NavParams,
-     private auth: AuthProvider, 
-     private alertCtrl: AlertController
-  ) { }
+    public navParams: NavParams,
+    private auth: AuthProvider,
+    private alertCtrl: AlertController
+  ) {}
 
 
-  alert({ title, message }: { title: string; message: string; }) { 
-    let al = this.alertCtrl.create({
+  alert({ title, message }: { title: string; message: string; }) {
+    let alert = this.alertCtrl.create({
       title: title,
       subTitle: message,
       buttons: ['Fechar']
     });
-    al.present();
+    alert.present();
   }
 
-  
   async login(user: User) {
-    if(user.email == "" || user.password == "")
-    {
+    if (user.email == "" || user.password == "") {
       this.alert({ title: 'Erro', message: 'É necessário informar o email e senha' });
     } else {
       try {
@@ -48,9 +46,7 @@ export class LoginPage {
   }
 
   async register(user: User) {
-
-    if(user.email == "" || user.password == "")
-    {  
+    if (user.email == "" || user.password == "") {
       this.alert({ title: 'Erro', message: 'É necessário informar o email e senha' });
     } else {
       try {

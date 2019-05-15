@@ -15,10 +15,12 @@ export class HomePage {
 
   tarefas: Observable<Tarefas[]>;
 
-  constructor(public navCtrl: NavController, private auth: AuthProvider, private tarefasProvider:TarefasProvider) {
+  constructor(public navCtrl: NavController,
+    private auth: AuthProvider,
+    private tarefasProvider: TarefasProvider) {
   }
 
-  adicionar () {
+  adicionar() {
     this.navCtrl.push(AdicionarTarefaPage);
   }
   finalizar(tarefa: Tarefas) {
@@ -29,7 +31,7 @@ export class HomePage {
     this.tarefasProvider.excluir(id);
   }
 
-  
+
 
   ionViewDidLoad() {
     this.tarefas = this.tarefasProvider.pegarTarefas(false);

@@ -1,11 +1,10 @@
 import { Items } from './listagem-categorias';
 import { AngularFireDatabase } from 'angularfire2/database';
-import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { AngularFirestore } from 'angularfire2/firestore';
+import { Component } from '@angular/core';
 
 export interface Items {
-  Categorias:string;
+  Categorias: string;
 }
 
 @IonicPage()
@@ -15,16 +14,18 @@ export interface Items {
 })
 
 export class ListagemCategoriasPage {
-items = {} as Items
-arrayItems:any[] = [];
+  items = {} as Items
+  arrayItems: any[] = [];
 
-  constructor(public navCtrl: NavController, private afs: AngularFireDatabase, public navParams: NavParams) {
+  constructor(public navCtrl: NavController,
+    private afs: AngularFireDatabase,
+    public navParams: NavParams) {
 
     this.afs
       .list("Categorias")
       .snapshotChanges()
-      .subscribe((data)=>{
-        data.map((item)=>{
+      .subscribe((data) => {
+        data.map((item) => {
           console.log(item.payload.val() as Items);
           this.arrayItems.push(item.payload.val() as Items);
           console.log(this.arrayItems)
@@ -36,8 +37,8 @@ arrayItems:any[] = [];
     console.log('ionViewDidLoad ListagemCategoriasPage');
 
   }
-  getItems(ev:any) {
-    
+  getItems(ev: any) {
+
     // set val to the value of the searchbar
     const val = ev.target.value;
 
@@ -52,6 +53,3 @@ arrayItems:any[] = [];
     console.log("Selected Item", Items);
   }
 }
-
-
-
