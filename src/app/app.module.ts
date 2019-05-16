@@ -20,6 +20,7 @@ import { ListagemCategoriasPage } from '../pages/listagem-categorias/listagem-ca
 import { TarefasProvider } from '../providers/tarefas/tarefas';
 import { AdicionarTarefaPage } from '../pages/adicionar-tarefa/adicionar-tarefa';
 import { TarefasFinalizadasPage } from '../pages/tarefas-finalizadas/tarefas-finalizadas';
+import { CardsPage } from '../pages/cards/cards';
 
 import { config } from '../config';
 
@@ -31,7 +32,8 @@ import { config } from '../config';
     LoginPage,
     AdicionarTarefaPage,
     TarefasFinalizadasPage,
-    ListagemCategoriasPage
+    ListagemCategoriasPage,
+    CardsPage
 
   ],
   imports: [
@@ -40,6 +42,7 @@ import { config } from '../config';
     AngularFireModule.initializeApp(config),
     AngularFireAuthModule,
     AngularFirestoreModule,
+    
 
   ],
   bootstrap: [IonicApp],
@@ -50,7 +53,8 @@ import { config } from '../config';
     LoginPage,
     AdicionarTarefaPage,
     TarefasFinalizadasPage,
-    ListagemCategoriasPage
+    ListagemCategoriasPage,
+    CardsPage
 
   ],
   providers: [

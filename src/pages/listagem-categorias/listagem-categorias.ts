@@ -1,7 +1,8 @@
 import { Items } from './listagem-categorias';
 import { AngularFireDatabase } from 'angularfire2/database';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, } from 'ionic-angular';
 import { Component } from '@angular/core';
+import { CardsPage } from '../cards/cards';
 
 export interface Items {
   Categorias: string;
@@ -14,29 +15,35 @@ export interface Items {
 })
 
 export class ListagemCategoriasPage {
+
+  cardsPage = CardsPage
+  
   items = {} as Items
   arrayItems: any[] = [];
 
   constructor(public navCtrl: NavController,
     private afs: AngularFireDatabase,
     public navParams: NavParams) {
-
-    this.afs
+      
+    
+      this.afs
       .list("Categorias")
       .snapshotChanges()
       .subscribe((data) => {
-        data.map((item) => {
-          console.log(item.payload.val() as Items);
-          this.arrayItems.push(item.payload.val() as Items);
-          console.log(this.arrayItems)
+       data.map((item) => {
+          console.log(item.payload.val() as Items); 
+          this.arrayItems.push(item.payload.val() as Items);                  
+          console.log(this.arrayItems)          
         })
       })
-  }
+    }  
+   
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ListagemCategoriasPage');
 
-  }
+  }   
+
   getItems(ev: any) {
 
     // set val to the value of the searchbar
@@ -45,11 +52,11 @@ export class ListagemCategoriasPage {
     // if the value is an empty string don't filter the items
     if (val && val.trim() != '') {
       this.arrayItems = this.arrayItems.filter((item) => {
-        return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
+        return (item.item().indexOf(val.toLowerCase()) > -1);
       })
     }
   }
-  itemSelected(Items: string) {
-    console.log("Selected Item", Items);
+  itemSelected(arr: string) {
+    console.log("Selected Item", arr);
   }
 }

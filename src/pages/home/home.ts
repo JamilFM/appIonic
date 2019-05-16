@@ -19,7 +19,6 @@ export class HomePage {
     private auth: AuthProvider,
     private tarefasProvider: TarefasProvider) {
   }
-
   adicionar() {
     this.navCtrl.push(AdicionarTarefaPage);
   }
