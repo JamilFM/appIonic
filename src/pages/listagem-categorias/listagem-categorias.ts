@@ -16,36 +16,31 @@ export interface Items {
 
 export class ListagemCategoriasPage {
 
-  cardsPage = CardsPage
-  
   items = {} as Items
   arrayItems: any[] = [];
 
   constructor(public navCtrl: NavController,
     private afs: AngularFireDatabase,
     public navParams: NavParams) {
-      
-    
-      this.afs
+
+    this.afs
       .list("Categorias")
       .snapshotChanges()
       .subscribe((data) => {
-       data.map((item) => {
-          console.log(item.payload.val() as Items); 
-          this.arrayItems.push(item.payload.val() as Items);                  
-          console.log(this.arrayItems)          
+        data.map((item) => {
+          console.log(item.payload.val() as Items);
+          this.arrayItems.push(item.payload.val() as Items);
+          console.log(this.items)
+
         })
       })
-    }  
-   
+
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ListagemCategoriasPage');
-
-  }   
-
+  }
   getItems(ev: any) {
-
     // set val to the value of the searchbar
     const val = ev.target.value;
 
@@ -56,7 +51,10 @@ export class ListagemCategoriasPage {
       })
     }
   }
-  itemSelected(arr: string) {
+  itemSelected(arr: any) {
+    this.navCtrl.push(CardsPage, {
+      item: arr
+    });
     console.log("Selected Item", arr);
   }
-}
+} 
