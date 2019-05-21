@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content>
-  <ion-searchbar (ionInput)="getItems($event, arr)"></ion-searchbar>
+  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
 
   <ion-list no-lines>
       <button ion-item *ngFor="let arr of arrayItems" (click)="itemSelected($event, arr)">   
