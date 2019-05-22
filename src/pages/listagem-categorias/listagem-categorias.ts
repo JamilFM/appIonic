@@ -22,35 +22,35 @@ export class ListagemCategoriasPage {
   constructor(public navCtrl: NavController,
     private afs: AngularFireDatabase,
     public navParams: NavParams) {
+    this.initializeItems();
+  }
 
+  initializeItems() {
+    this.arrayItems = [];
     this.afs
       .list("Categorias")
       .snapshotChanges()
       .subscribe((data) => {
         data.map((item) => {
-          console.log(item.payload.val() as Items);
           this.arrayItems.push(item.payload.val() as Items);
-          console.log(this.items)
-
         })
-      })
-
+      });
   }
-
   ionViewDidLoad() {
     console.log('ionViewDidLoad ListagemCategoriasPage');
   }
+
   getItems(ev: any) {
-    // set val to the value of the searchbar
+    this.initializeItems();
     const val = ev.target.value;
 
-    // if the value is an empty string don't filter the items
     if (val && val.trim() != '') {
       this.arrayItems = this.arrayItems.filter((item) => {
-        return (item.item().indexOf(val.toLowerCase()) > -1);
+        return (item.Categoria.toLowerCase().indexOf(val.toLowerCase()) > -1);
       })
     }
   }
+
   itemSelected(arr: any) {
     this.navCtrl.push(CardsPage, {
       item: arr

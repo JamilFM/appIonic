@@ -13,10 +13,12 @@ import { AuthProvider } from '../../providers/auth/auth'
 })
 
 export class TabsPage {
-
-  tab1Root = HomePage;
-  tab2Root = TarefasFinalizadasPage;
-  tab3Root = ListagemCategoriasPage;
+  
+  tab1Root = ListagemCategoriasPage;
+  tab2Root = HomePage; 
+  tab3Root = TarefasFinalizadasPage;
+  
+  
 
   constructor(public navCtrl: NavController, private auth: AuthProvider) {
               this.auth.user.subscribe((auth) => {

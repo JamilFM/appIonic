@@ -18,7 +18,7 @@ export class LoginPage {
     public navParams: NavParams,
     private auth: AuthProvider,
     private alertCtrl: AlertController
-  ) {}
+  ) { }
 
 
   alert({ title, message }: { title: string; message: string; }) {

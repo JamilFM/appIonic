@@ -9,18 +9,22 @@
   <ion-card>
 
     <ion-card-header>
-      <ion-icon style="zoom:8;" name="lock"></ion-icon>
+        <img src="assets/imgs/logo-buscar.jpg "/>      
     </ion-card-header>
 
     <ion-card-content>
 
       <ion-item>
-        <ion-label stacked>E-mail</ion-label>
+        <ion-label floating>
+          <ion-icon name="person"></ion-icon>
+          E-mail</ion-label>
         <ion-input type="text" [(ngModel)]="user.email"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label stacked>Senha</ion-label>
+          <ion-label floating>
+              <ion-icon name="lock"></ion-icon>
+              Senha</ion-label>
         <ion-input type="password" [(ngModel)]="user.password"></ion-input>
       </ion-item>
 
