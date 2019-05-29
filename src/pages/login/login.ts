@@ -21,18 +21,18 @@ export class LoginPage {
   ) { }
 
 
-  alert({ title, message }: { title: string; message: string; }) {
-    let alert = this.alertCtrl.create({
+  alert(title, message) {
+    let al = this.alertCtrl.create({
       title: title,
-      subTitle: message,
+      subTitle: 'É necessário informar o email e senha!',
       buttons: ['Fechar']
     });
-    alert.present();
+    al.present();
   }
 
   async login(user: User) {
     if (user.email == "" || user.password == "") {
-      this.alert({ title: 'Erro', message: 'É necessário informar o email e senha' });
+      this.alert('Erro', 'É necessário informar o email e senha');
     } else {
       try {
         const result = await this.auth.login(user);
@@ -40,14 +40,14 @@ export class LoginPage {
           this.navCtrl.setRoot(TabsPage);
         }
       } catch (e) {
-        this.alert({ title: 'Erro ao logar', message: e.message });
+        this.alert('Erro ao logar', e.message);
       }
     }
   }
 
   async register(user: User) {
     if (user.email == "" || user.password == "") {
-      this.alert({ title: 'Erro', message: 'É necessário informar o email e senha' });
+      this.alert('Erro', 'É necessário informar o email e senha');
     } else {
       try {
         const result = await this.auth.register(user);
@@ -55,7 +55,7 @@ export class LoginPage {
           this.navCtrl.setRoot(TabsPage);
         }
       } catch (e) {
-        this.alert({ title: 'Erro ao cadastrar', message: e.message });
+        this.alert('Erro ao cadastrar', e.message);
       }
     }
   }

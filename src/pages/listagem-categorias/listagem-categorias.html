@@ -1,15 +1,11 @@
-<ion-header>
+  <ion-header>
   <ion-navbar color="primary">
     <ion-title>Categorias</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-<<<<<<< HEAD
   <ion-searchbar (ionInput)="getItems(arr)"></ion-searchbar>
-=======
-  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
->>>>>>> a34c10ab41e3953aa35ed53c7e1419e162fd3e19
 
   <ion-list>
       <button ion-item *ngFor="let arr of arrayItems" (click)="itemSelected(arr)">   

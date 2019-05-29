@@ -1,11 +1,13 @@
 <ion-header>
   <ion-navbar color="primary">
-
     <ion-title> Minhas Anotações </ion-title>
 
-    <ion-fab right middle>
-      <button ion-fab color="light"><ion-icon name="add" (click)="adicionar()"></ion-icon></button>
-    </ion-fab>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="adicionar()">
+        <ion-icon name="add-circle"></ion-icon>
+      </button>
+    </ion-buttons>
+
 
   </ion-navbar>
 </ion-header>
@@ -17,6 +19,7 @@
       <button clear="" ion-button item-end icon-left (click)="finalizar(tarefa)">
         <ion-icon name="checkbox"></ion-icon>
       </button>
+
       <button clear="" ion-button item-end icon-left color="danger" (click)="excluir(tarefa.id)">
         <ion-icon name="trash"></ion-icon>
       </button>

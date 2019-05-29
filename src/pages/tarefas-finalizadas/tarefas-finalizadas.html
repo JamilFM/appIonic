@@ -1,22 +1,22 @@
 <ion-header>
 
-    <ion-navbar color="primary">
-      <ion-title>Tarefas Finalizadas</ion-title>
+  <ion-navbar color="primary">
+    <ion-title>Tarefas Finalizadas</ion-title>
 
-      <ion-fab right middle>
-          <button ion-fab color="light"><ion-icon name="md-close" (click)="sair()"></ion-icon></button>
-        </ion-fab>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="sair()"><ion-icon name="close-circle"></ion-icon> </button>
+    </ion-buttons>
 
-      
 
-    </ion-navbar>
-  
-  </ion-header>
-  
-  <ion-content padding>
-    <ion-item *ngFor="let tarefa of tarefas | async"> 
-      {{ tarefa.nome }}
-      <button clear="" ion-button item-end icon-left color="danger" (click)="excluir(tarefa.id)"> <ion-icon name="trash"></ion-icon>
-      </button>
-    </ion-item>
-  </ion-content>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <ion-item *ngFor="let tarefa of tarefas | async">
+    {{ tarefa.nome }}
+    <button clear="" ion-button item-end icon-left color="danger" (click)="excluir(tarefa.id)">
+      <ion-icon name="trash"></ion-icon>
+    </button>
+  </ion-item>
+</ion-content>
