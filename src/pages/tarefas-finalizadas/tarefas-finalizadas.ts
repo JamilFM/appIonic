@@ -15,8 +15,8 @@ export class TarefasFinalizadasPage {
   tarefas: Observable<Tarefas[]>;
   auth: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, 
-              private tarefasProvider:TarefasProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+    private tarefasProvider: TarefasProvider) {
   }
 
   excluir(id: string) {
@@ -24,10 +24,9 @@ export class TarefasFinalizadasPage {
   }
 
   sair() {
-     
-      this.navCtrl.setRoot(LoginPage);
-     };
-  
+    this.navCtrl.setRoot(LoginPage);
+  };
+
 
   ionViewDidLoad() {
     this.tarefas = this.tarefasProvider.pegarTarefas(true);

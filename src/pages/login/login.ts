@@ -20,7 +20,6 @@ export class LoginPage {
     private alertCtrl: AlertController
   ) { }
 
-
   alert(title, message) {
     let al = this.alertCtrl.create({
       title: title,

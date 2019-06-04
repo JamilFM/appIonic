@@ -15,7 +15,6 @@ export class AuthProvider {
   constructor(private firebaseAuth: AngularFireAuth) {
     this.user = firebaseAuth.authState;
   }
-
   
   register(user: User) {
     return this.firebaseAuth.auth.createUserWithEmailAndPassword(user.email, user.password);

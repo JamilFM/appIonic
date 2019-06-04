@@ -33,6 +33,7 @@
 
 
 <body>
+    
 <!-- Ionic's root component and where the app will load -->
 <ion-app></ion-app>
 
@@ -55,7 +56,7 @@
 
 <script>
   // Your web app's Firebase configuration
-  var firebaseConfig = {
+  var config = {
     apiKey: "AIzaSyApe1FX6k_BADXneNiYuO-UtnxRNMW56dg",
     authDomain: "app-ionic-136a3.firebaseapp.com",
     databaseURL: "https://app-ionic-136a3.firebaseio.com",
@@ -65,7 +66,7 @@
     appId: "1:483297507871:web:cf5616816cf4487b"
   };
   // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
+  firebase.initializeApp(config);
 </script>
 
 <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
@@ -76,8 +77,6 @@ document.addEventListener('DOMContentLoaded', function() {
   var actionCode = ('oobCode');
   var continueUrl = ('continueUrl');
   var lang = ('lang') || 'en';
-
-
 
   // Configure the Firebase SDK.
   // This is the minimum configuration required for the API to be used.

@@ -1,7 +1,7 @@
 <ion-header>
 
   <ion-navbar color="primary">
-    <ion-title>Adicionar Tarefa</ion-title>
+    <ion-title>Adicionar Lembretes</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -12,10 +12,23 @@
     <ion-card-content>
 
       <ion-item>
-        <ion-label floating> Nome da tarefa </ion-label>
+        <ion-label floating> Nome do lembrete </ion-label>
         <ion-input type="text" [(ngModel)]="tarefa.nome" maxlength="50"></ion-input>
       </ion-item>
       <button ion-button color="secondary" block (click)="adicionarTarefa(tarefa)">Adicionar</button>
+    </ion-card-content>
+
+  </ion-card>
+
+  <ion-card>
+
+    <ion-card-content>
+
+      <ion-item>
+        <ion-label floating> Nome do lembrete </ion-label>
+        <ion-input type="text" [(ngModel)]="tarefa2.nome" maxlength="50"></ion-input>
+      </ion-item>
+      <button ion-button color="secondary" block (click)="adicionarTarefa(tarefa2)">Adicionar</button>
     </ion-card-content>
 
   </ion-card>
