@@ -30,10 +30,11 @@
         <ion-input type="password" [(ngModel)]="user.password"></ion-input>
       </ion-item>
 
-      <button ion-button block color="primary" (click)="login(user)">Acessar</button>
+      <button ion-button class="login" block color="primary" (click)="login(user)">Acessar</button>
+
+      <ion-label class="cadastro" (click)="register(user)"> Cadastre-se </ion-label>
+
     </ion-card-content>
   </ion-card>
-  <ion-card-content>
-    <button ion-button block color="secundary" outline (click)="register(user)"> Cadastre-se </button>
-  </ion-card-content>
+
 </ion-content>
