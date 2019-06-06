@@ -1,16 +1,15 @@
-  <ion-header>
+<ion-header>
   <ion-navbar color="primary">
     <ion-title>Categorias</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <ion-searchbar (ionInput)="getItems(arr)"></ion-searchbar>
-
+  <ion-searchbar (input)="getItems(arr)"></ion-searchbar>
+  <br>
   <ion-list>
-      <button ion-item *ngFor="let arr of arrayItems" (click)="itemSelected(arr)">   
-          {{ arr.Categoria }}         
-        </button> 
+    <button ion-item *ngFor="let arr of arrayItems" (click)="itemSelected(arr)"> {{ arr.Categoria }}
+    </button>
   </ion-list>
 
 </ion-content>
